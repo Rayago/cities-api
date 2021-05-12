@@ -4,6 +4,7 @@ import com.github.rayago.citiesapi.countries.Country;
 import com.github.rayago.citiesapi.repository.CountryRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +28,15 @@ public class CountryResource {
     }
 
     @GetMapping("/{id}")
-    public Country getOne(@PathVariable Long id){
+    public ResponseEntity getOne(@PathVariable Long id){
         Optional<Country> optional = repository.findById(id);
-        return optional.get();
+
+        if(optional.isPresent()) {
+            return ResponseEntity.ok().body(optional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+        
     }
 
 }
