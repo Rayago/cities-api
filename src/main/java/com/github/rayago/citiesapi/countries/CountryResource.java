@@ -1,7 +1,7 @@
-package com.github.rayago.citiesapi;
+package com.github.rayago.citiesapi.countries;
 
 import com.github.rayago.citiesapi.countries.Country;
-import com.github.rayago.citiesapi.repository.CountryRepository;
+import com.github.rayago.citiesapi.countries.repository.CountryRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +36,7 @@ public class CountryResource {
         } else {
             return ResponseEntity.notFound().build();
         }
-        
+
     }
 
 }

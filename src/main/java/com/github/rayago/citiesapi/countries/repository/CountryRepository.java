@@ -1,4 +1,4 @@
-package com.github.rayago.citiesapi.repository;
+package com.github.rayago.citiesapi.countries.repository;
 
 import com.github.rayago.citiesapi.countries.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
