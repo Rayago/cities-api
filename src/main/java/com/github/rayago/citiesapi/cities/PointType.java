@@ -36,10 +36,6 @@ public class PointType implements UserType {
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session,
                               Object owner) throws HibernateException, SQLException {
-    /* 1st
-    Object object = rs.getObject(names[0]);
-    Double[] points = StringLocationUtils.transform(object.toString());
-    return new Point(points[0], points1);*/
 
         /* 2nd */
         PGpoint value = (PGpoint) rs.getObject(names[0]);
